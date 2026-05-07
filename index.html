@@ -442,6 +442,115 @@
       .videos-grid { grid-template-columns: repeat(2, 1fr); }
       .about-grid { gap: 2.5rem; }
     }
+
+    /* ─── App Section ─── */
+    #app {
+      background: #06091A;
+      padding: 5.5rem 1.5rem;
+      position: relative;
+      overflow: hidden;
+    }
+    #app::before {
+      content: '';
+      position: absolute; inset: 0;
+      background:
+        radial-gradient(ellipse 700px 400px at 80% 50%, rgba(14,165,233,0.08) 0%, transparent 60%),
+        radial-gradient(ellipse 500px 400px at 20% 50%, rgba(129,140,248,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .app-inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      align-items: center;
+      position: relative;
+      z-index: 1;
+    }
+    .app-features-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.25rem;
+      margin: 2rem 0;
+    }
+    .app-feat {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+    }
+    .app-feat-icon {
+      width: 38px; height: 38px;
+      background: rgba(14,165,233,0.12);
+      border: 1px solid rgba(14,165,233,0.2);
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .app-feat-text h4 { font-size: 0.9rem; font-weight: 600; color: #fff; margin-bottom: 0.2rem; }
+    .app-feat-text p  { font-size: 0.82rem; color: #64748B; line-height: 1.5; }
+    .btn-app {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: linear-gradient(135deg, #0EA5E9, #818CF8);
+      color: #fff;
+      padding: 0.875rem 2rem;
+      border-radius: 50px;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 0.95rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 4px 24px rgba(14,165,233,0.3);
+    }
+    .btn-app:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(14,165,233,0.4); }
+    .app-mockup {
+      background: #0D1627;
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 20px;
+      padding: 1.5rem;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+    }
+    .mockup-bar {
+      display: flex; align-items: center; gap: 0.75rem;
+      margin-bottom: 1.25rem; padding-bottom: 1rem;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .mockup-dot { width: 10px; height: 10px; border-radius: 50%; }
+    .mockup-title { font-size: 0.8rem; font-weight: 600; color: #38BDF8; margin-left: auto; }
+    .mockup-card {
+      background: rgba(255,255,255,0.04);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 12px;
+      padding: 1.25rem;
+      margin-bottom: 0.75rem;
+    }
+    .mockup-word { font-size: 1.6rem; font-weight: 800; color: #fff; margin-bottom: 0.35rem; }
+    .mockup-phonetic { font-size: 0.72rem; color: #475569; margin-bottom: 0.75rem; }
+    .mockup-def { font-size: 0.8rem; color: #94A3B8; line-height: 1.5; }
+    .mockup-btns { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0.5rem; margin-top: 1rem; }
+    .mockup-btn {
+      padding: 0.5rem 0;
+      border-radius: 8px;
+      border: 1px solid;
+      font-size: 0.7rem; font-weight: 600;
+      text-align: center;
+    }
+    .mockup-tag {
+      display: inline-block;
+      background: rgba(14,165,233,0.15);
+      border: 1px solid rgba(14,165,233,0.25);
+      color: #38BDF8;
+      font-size: 0.65rem; font-weight: 600;
+      padding: 0.2rem 0.6rem;
+      border-radius: 50px;
+      margin-bottom: 0.75rem;
+    }
+    @media (max-width: 768px) {
+      .app-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .app-mockup { order: -1; }
+    }
   </style>
 </head>
 <body>
@@ -453,6 +562,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#about">About</a></li>
       <li><a href="#videos">Episodes</a></li>
+      <li><a href="#app">App</a></li>
       <li><a href="#signup">Newsletter</a></li>
       <li><a href="https://www.youtube.com/@Accent_Unlocked" target="_blank" rel="noopener" class="pill">Subscribe ↗</a></li>
     </ul>
@@ -608,6 +718,89 @@
         View All Episodes on YouTube ↗
       </a>
     </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════ APP ═══════════════════════════════ -->
+<section id="app">
+  <div class="app-inner">
+
+    <!-- Left: copy -->
+    <div>
+      <p class="section-label">Free Learning App</p>
+      <h2 class="section-title" style="color:#fff;">Practice Between<br>Episodes</h2>
+      <p style="color:#64748B; font-size:1rem; line-height:1.7; max-width:460px;">
+        The Accent Unlocked app turns your vocabulary into a daily habit —
+        with smart flashcards, a live typing game, and a full word bank at your fingertips.
+      </p>
+
+      <div class="app-features-list">
+        <div class="app-feat">
+          <div class="app-feat-icon">🧠</div>
+          <div class="app-feat-text">
+            <h4>Spaced Repetition Flashcards</h4>
+            <p>Smart scheduling shows you words right before you forget them, so every review counts.</p>
+          </div>
+        </div>
+        <div class="app-feat">
+          <div class="app-feat-icon">⚡</div>
+          <div class="app-feat-text">
+            <h4>Word Blitz Typing Game</h4>
+            <p>60-second rounds, combo multipliers, and live scoring — learning vocabulary has never been this fun.</p>
+          </div>
+        </div>
+        <div class="app-feat">
+          <div class="app-feat-icon">📖</div>
+          <div class="app-feat-text">
+            <h4>B1 → C1 Word Bank</h4>
+            <p>Browse 30 curated words with definitions, phonetics, and example sentences. Hear every word pronounced.</p>
+          </div>
+        </div>
+      </div>
+
+      <a href="https://accent-unlocked-app.vercel.app" target="_blank" rel="noopener" class="btn-app">
+        🚀 Open the App — It's Free
+      </a>
+    </div>
+
+    <!-- Right: mockup -->
+    <div class="app-mockup">
+      <div class="mockup-bar">
+        <div class="mockup-dot" style="background:#EF4444;"></div>
+        <div class="mockup-dot" style="background:#F59E0B;"></div>
+        <div class="mockup-dot" style="background:#10B981;"></div>
+        <span class="mockup-title">Accent Unlocked App</span>
+      </div>
+
+      <div class="mockup-card">
+        <div class="mockup-tag">B2 · adjective</div>
+        <div class="mockup-word">eloquent</div>
+        <div class="mockup-phonetic">EL-oh-kwent &nbsp;·&nbsp; 🔊</div>
+        <div class="mockup-def">Able to express ideas clearly and persuasively in speech or writing.</div>
+        <div class="mockup-btns">
+          <div class="mockup-btn" style="border-color:rgba(239,68,68,0.4);color:#F87171;">Again</div>
+          <div class="mockup-btn" style="border-color:rgba(245,158,11,0.4);color:#FBB24;">Hard</div>
+          <div class="mockup-btn" style="border-color:rgba(14,165,233,0.5);color:#38BDF8;background:rgba(14,165,233,0.1);">Good</div>
+          <div class="mockup-btn" style="border-color:rgba(16,185,129,0.4);color:#34D399;">Easy</div>
+        </div>
+      </div>
+
+      <div style="display:flex;gap:0.75rem;">
+        <div style="flex:1;background:rgba(14,165,233,0.08);border:1px solid rgba(14,165,233,0.15);border-radius:10px;padding:0.875rem;text-align:center;">
+          <div style="font-size:1.4rem;font-weight:800;color:#38BDF8;">7</div>
+          <div style="font-size:0.65rem;color:#475569;margin-top:2px;">Day Streak 🔥</div>
+        </div>
+        <div style="flex:1;background:rgba(129,140,248,0.08);border:1px solid rgba(129,140,248,0.15);border-radius:10px;padding:0.875rem;text-align:center;">
+          <div style="font-size:1.4rem;font-weight:800;color:#818CF8;">12/30</div>
+          <div style="font-size:0.65rem;color:#475569;margin-top:2px;">Words Learned</div>
+        </div>
+        <div style="flex:1;background:rgba(245,158,11,0.08);border:1px solid rgba(245,158,11,0.15);border-radius:10px;padding:0.875rem;text-align:center;">
+          <div style="font-size:1.4rem;font-weight:800;color:#FBBF24;">340</div>
+          <div style="font-size:0.65rem;color:#475569;margin-top:2px;">High Score 🏆</div>
+        </div>
+      </div>
+    </div>
+
   </div>
 </section>
 
